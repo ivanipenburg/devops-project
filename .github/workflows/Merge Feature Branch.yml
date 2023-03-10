@@ -33,9 +33,14 @@ jobs:
           npm run lint:fix
 
       - name: Create Pull Request
-        uses: octokit/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
-          title: 'Format code changes'
-          body: 'This pull request was automatically created by the formatting workflow.'
-          branch: development
-          base: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Run Linting
+          title: Run linting
+          body: |
+            This pull request was created by a GitHub workflow.
+            It runs Eslint to format the code.
+          branch: linting/${{ github.head_ref }}
+          base: ${{ github.head_ref }}
+          labels: linting
