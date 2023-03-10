@@ -32,11 +32,10 @@ jobs:
           npm run lint
           npm run lint:fix
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v7
+      - name: Create Pull Request
+        uses: octokit/create-pull-request@v3
         with:
-          author_name: ${{ github.actor }}
-          author_email: ${{ github.actor }}@users.noreply.github.com
-          message: "Run Prettier"
-          add: "."
-          push: true
+          title: 'Format code changes'
+          body: 'This pull request was automatically created by the formatting workflow.'
+          branch: development
+          base: main
