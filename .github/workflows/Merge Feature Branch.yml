@@ -28,9 +28,9 @@ jobs:
 
       - name: Run Prettier
         run: |
+          cd client
           npm run lint
           npm run lint:fix
-          npm run format
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
