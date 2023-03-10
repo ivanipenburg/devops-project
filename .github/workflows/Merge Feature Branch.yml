@@ -41,6 +41,6 @@ jobs:
           body: |
             This pull request was created by a GitHub workflow.
             It runs Eslint to format the code.
-          branch: linting/${{ github.head_ref }}
+          branch: formatting/${{ github.head_ref }}
           base: ${{ github.head_ref }}
-          labels: linting
+          labels: formatting
