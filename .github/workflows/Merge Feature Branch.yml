@@ -22,7 +22,8 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: cd client
+        run: 
+          cd client
           npm ci
 
       - name: Run Prettier
