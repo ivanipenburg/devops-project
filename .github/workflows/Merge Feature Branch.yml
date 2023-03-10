@@ -48,3 +48,11 @@ jobs:
           branch: formatting
           base: ${{ github.head_ref }}
           labels: formatting
+
+      - name: Merge Pull Request
+        uses: peter-evans/merge-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Merge formatting
+          merge-method: squash
+          delete-branch: false
