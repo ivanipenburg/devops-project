@@ -1,0 +1,14 @@
+.rooms-list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+}
+
+.room {
+    background-color: #F8F8FC;
+}
+
+.room__body {
+    margin-left: 20px;
+    margin-right: 20px;
+}
