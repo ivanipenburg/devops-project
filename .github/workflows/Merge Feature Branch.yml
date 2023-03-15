@@ -2,7 +2,7 @@ name: Merge Feature Branch
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - development
 
@@ -30,20 +30,8 @@ jobs:
           cd client
           npm ci
 
-      - name: Run Prettier
+      - name: Run ci/cd
         run: |
           cd client
-          npm run lint:fix
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Run Linting
-          title: Run linting
-          body: |
-            This pull request was created by a GitHub workflow.
-            It runs Eslint to format the code.
-          branch: formatting
-          base: ${{ github.head_ref }}
-          labels: formatting
+          npm run lint
+          npm test
