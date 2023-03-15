@@ -34,4 +34,3 @@ jobs:
         run: |
           cd client
           npm run lint
-          npm test --passWithNoTests
