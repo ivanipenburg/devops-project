@@ -1,0 +1,13 @@
+.bar{
+  display: flex;
+  width: 60%;
+  border: solid lightgrey;
+  border-radius: 25px;
+  text-align: right;
+  color: grey;
+}
+.fill{
+  background: limegreen;
+  border-radius: 25px;
+  font-size: small;
+}
