@@ -1,1 +1,105 @@
-{}
+{
+  "api": {
+    "livingSpaceApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "devopsproject": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "devopsproject76cd4aa2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "devopsprojectda02968a": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_devopsproject76cd4aa2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsproject76cd4aa2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "livingSpaceStorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

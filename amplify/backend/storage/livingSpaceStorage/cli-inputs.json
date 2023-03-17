@@ -1,0 +1,14 @@
+{
+  "resourceName": "livingSpaceStorage",
+  "policyUUID": "628a57f7",
+  "bucketName": "devopsproject24bf84b0fc984fe1836e2e59ec5fccac",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
