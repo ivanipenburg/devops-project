@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "paths": {
+    "/task": {
+      "name": "/task",
+      "lambdaFunction": "devopsprojectda02968a",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/user": {
+      "name": "/user",
+      "lambdaFunction": "devopsproject76cd4aa2",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
