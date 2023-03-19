@@ -1,3 +1,4 @@
+import { Auth } from 'aws-amplify'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 
@@ -10,13 +11,16 @@ const NavBar = () => {
       <div className="navbar__links">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/rooms">Rooms</Link>
           </li>
           <li>
             <Link to="/household">Household</Link>
+          </li>
+          <li>
+            <button onClick={() => Auth.signOut()}>Sign Out</button>
           </li>
         </ul>
       </div>
