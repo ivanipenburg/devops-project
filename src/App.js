@@ -3,10 +3,10 @@ import './App.css'
 import Admin from './pages/Admin'
 import Home from './pages/Home'
 import Household from './pages/Household'
+import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Rooms from './pages/Rooms'
 
-import { withAuthenticator } from '@aws-amplify/ui-react'
 import '@aws-amplify/ui-react/styles.css'
 
 import { Amplify } from 'aws-amplify'
@@ -18,7 +18,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/household" element={<Household />} />
@@ -29,4 +30,4 @@ function App() {
   )
 }
 
-export default withAuthenticator(App)
+export default App
