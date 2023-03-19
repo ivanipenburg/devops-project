@@ -13,6 +13,10 @@
       "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-devopsproject-dev-131951-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
+      "auth": {
+        "devopsproject6f6a34e7": {},
+        "devopsproject": {}
+      },
       "function": {
         "devopsprojectda02968a": {
           "deploymentBucketName": "amplify-devopsproject-dev-131951-deployment",
@@ -22,9 +26,6 @@
           "deploymentBucketName": "amplify-devopsproject-dev-131951-deployment",
           "s3Key": "amplify-builds/devopsproject76cd4aa2-63514564434869393161-build.zip"
         }
-      },
-      "auth": {
-        "devopsproject": {}
       },
       "api": {
         "livingSpaceApi": {}
