@@ -16,6 +16,7 @@
       "auth": {
         "devopsproject6f6a34e7": {},
         "devopsproject": {}
+      },
       "function": {
         "devopsprojectda02968a": {
           "deploymentBucketName": "amplify-devopsproject-dev-131951-deployment",
