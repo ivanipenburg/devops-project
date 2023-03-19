@@ -1,4 +1,3 @@
-import { withAuthenticator } from '@aws-amplify/ui-react'
 import NavBar from '../components/NavBar'
 
 const Home = () => {
@@ -10,4 +9,4 @@ const Home = () => {
   )
 }
 
-export default withAuthenticator(Home)
+export default Home
