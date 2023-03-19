@@ -61,6 +61,40 @@
       "service": "Lambda"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_devopsproject76cd4aa2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsproject76cd4aa2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    }
+  },
   "storage": {
     "livingSpaceStorage": {
       "dependsOn": [],

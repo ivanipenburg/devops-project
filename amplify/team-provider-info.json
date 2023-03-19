@@ -16,6 +16,21 @@
       "auth": {
         "devopsproject6f6a34e7": {},
         "devopsproject": {}
+      "function": {
+        "devopsprojectda02968a": {
+          "deploymentBucketName": "amplify-devopsproject-dev-131951-deployment",
+          "s3Key": "amplify-builds/devopsprojectda02968a-453237553458464e664c-build.zip"
+        },
+        "devopsproject76cd4aa2": {
+          "deploymentBucketName": "amplify-devopsproject-dev-131951-deployment",
+          "s3Key": "amplify-builds/devopsproject76cd4aa2-63514564434869393161-build.zip"
+        }
+      },
+      "api": {
+        "livingSpaceApi": {}
+      },
+      "storage": {
+        "livingSpaceStorage": {}
       }
     }
   }
