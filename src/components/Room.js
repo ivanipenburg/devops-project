@@ -1,10 +1,12 @@
 import './Room.css'
 import ProgressBar from './ProgressBar'
+import Todo from './Todo'
 
 Room.propTypes = {
   name: String,
   illustration: String,
-  progress: Number
+  progress: Number,
+  todoList: String
 }
 
 export default function Room(props){
@@ -12,7 +14,10 @@ export default function Room(props){
     <div className='card'>
       <img className='image' src={props.illustration}></img>
       {props.name}
-      <ProgressBar progress='45%'/>
+      <ProgressBar progress={props.progress}/>
+      <ul className='roomList'>
+        {props.todoList.map((todo, index) => <Todo key={index} task={todo}></Todo>)}
+      </ul>
     </div>
   )
 }
