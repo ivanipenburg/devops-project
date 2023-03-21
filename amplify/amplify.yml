@@ -4,6 +4,7 @@ backend:
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
+        - export PATH=/opt/python/3.8.6/bin:$PATH
         - amplifyPush --simple
         - pip3 install asdf
 frontend:
