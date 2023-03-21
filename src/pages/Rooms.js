@@ -112,7 +112,7 @@ const Rooms = () => {
       {rooms.map((room) => (
         <div key={room.id}>
           <h2>{room.name}</h2>
-          {/* Map all tasks where RoomID matches room.id */}
+          Map all tasks where RoomID matches room.id 
           <ul>
             {tasks
               .filter((task) => task.roomID === room.id)
