@@ -4,10 +4,6 @@ backend:
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
-        - apt-get update
-        - apt-get install python3-pip
-        - pip3 install --upgrade pip
-        - pip3 install pipenv
         - amplifyPush --simple
         - pip3 install asdf
 frontend:
@@ -15,17 +11,9 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - apt-get install python3-pip
-        - pip3 install --upgrade pip
-        - pip3 install pipenv
-        - pip3 install asdf
     build:
       commands:
         - npm run build
-        - apt-get install python3-pip
-        - pip3 install --upgrade pip
-        - pip3 install pipenv
-        - pip3 install asdf
   artifacts:
     baseDirectory: build
     files:
