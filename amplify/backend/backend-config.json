@@ -1,12 +1,138 @@
 {
-  "storage": {
-    "dynamoc5c06897": {
+  "api": {
+    "graphqlapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "devopsproject"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2023-03-28T14:10:53.561Z",
+                "apiKeyExpirationDays": 7,
+                "description": ""
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authdevopsproject"
+            }
+          }
+        }
+      },
       "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
+      "service": "AppSync"
     },
-    "songsStorage": {
+    "livingSpaceApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ],
       "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "devopsproject": {
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "devopsproject76cd4aa2": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "devopsprojectda02968a": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_devopsproject76cd4aa2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsproject76cd4aa2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsproject76cd4aa2"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    },
+    "AMPLIFY_function_devopsprojectda02968a_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "devopsprojectda02968a"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "livingSpaceStorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

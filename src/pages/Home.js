@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import NavBar from '../components/NavBar'
 import Overview from '../components/Overview'
 import Room from '../components/Room'
@@ -26,4 +26,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withAuthenticator(Home)

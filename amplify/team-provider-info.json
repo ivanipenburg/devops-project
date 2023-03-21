@@ -9,12 +9,30 @@
       "UnauthRoleName": "amplify-livingspace-dev-163927-unauthRole",
       "StackName": "amplify-livingspace-dev-163927",
       "StackId": "arn:aws:cloudformation:us-east-1:985833969172:stack/amplify-livingspace-dev-163927/92f83db0-c347-11ed-962e-12cbdb7f7967",
-      "AmplifyAppId": "d2ropbvb1nq79i"
+      "AmplifyAppId": "d2ropbvb1nq79i",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-livingspace-dev-163927-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
+      "auth": {
+        "devopsproject6f6a34e7": {},
+        "devopsproject": {}
+      },
+      "function": {
+        "devopsprojectda02968a": {
+          "deploymentBucketName": "amplify-livingspace-dev-163927-deployment",
+          "s3Key": "amplify-builds/devopsprojectda02968a-6b356c4245596a707165-build.zip"
+        },
+        "devopsproject76cd4aa2": {
+          "deploymentBucketName": "amplify-livingspace-dev-163927-deployment",
+          "s3Key": "amplify-builds/devopsproject76cd4aa2-6659416737774a445a4e-build.zip"
+        }
+      },
+      "api": {
+        "livingSpaceApi": {},
+        "graphqlapi": {}
+      },
       "storage": {
-        "dynamoc5c06897": {},
-        "songsStorage": {}
+        "livingSpaceStorage": {}
       }
     }
   }
