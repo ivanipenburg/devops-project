@@ -1,6 +1,5 @@
 import './Room.css'
 import ProgressBar from './ProgressBar'
-import Todo from './Todo'
 
 Room.propTypes = {
   name: String,
@@ -16,7 +15,13 @@ export default function Room(props){
       {props.name}
       <ProgressBar progress={props.progress}/>
       <ul className='roomList'>
-        {props.todoList.map((todo, index) => <Todo key={index} task={todo}></Todo>)}
+        {props.todoList.map((todo, index) =>     
+          <li className="todoItem" key={index}>
+            <div >
+              <input type="checkbox"/>
+              <label> {todo} </label>
+            </div>
+          </li>)}
       </ul>
       <button className='newtodo'>+ Add task</button>
     </div>

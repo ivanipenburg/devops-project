@@ -1,17 +1,24 @@
 import ProgressBar from './ProgressBar'
 import './Home.css'
 
-export default function Overview() {
+Overview.propTypes = {
+  totalprogress: Number,
+  pending: Number,
+  completed: Number,
+  overdue: Number
+}
+
+export default function Overview(props) {
   return(
     <div className='overview'>
       <h3 className='overviewtitle'>Overview</h3>
       <h5 style={{color: 'grey'}}>Progress</h5>
-      <ProgressBar progressid='overviewprogress' progress={30}></ProgressBar>
+      <ProgressBar progressid='overviewprogress' progress={props.totalprogress}></ProgressBar>
       <table className='tasknumbers'>
         <tr id='numbers'>
-          <td id='pending' style={{color: 'grey'}}>10</td>
-          <td id='completed' style={{color: 'green'}}>2</td>
-          <td id='overdue' style={{color: 'red'}}>3</td>
+          <td id='pending' style={{color: 'grey'}}>{props.pending}</td>
+          <td id='completed' style={{color: 'green'}}>{props.completed}</td>
+          <td id='overdue' style={{color: 'red'}}>{props.overdue}</td>
         </tr>
         <tr>
           <td>Tasks Pending</td>
