@@ -101,6 +101,7 @@ const Rooms = () => {
     <div>
       <NavBar />
       <h1>Rooms</h1>
+      {/*
       <div className='rooms'>
         <Room name='Living room' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={54} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>
         <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>   
@@ -108,7 +109,7 @@ const Rooms = () => {
         <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>
         <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>  
       </div>
-      {/*
+      */}
       {rooms.map((room) => (
         <div key={room.id}>
           <h2>{room.name}</h2>
@@ -135,7 +136,6 @@ const Rooms = () => {
         <TextField name="name" label="Room Name" />
         <Button type="submit">Create Room</Button>
       </View>
-      */}
     </div>
   )
 }
