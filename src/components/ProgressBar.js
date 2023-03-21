@@ -4,10 +4,11 @@ import './ProgressBar.css'
 
 ProgressBar.propTypes = {
   progress: Number,
-  size: String
+  size: String,
+  progressid: String
 }
 
-export default function ProgressBar({ progress, size }) {
+export default function ProgressBar({ progress, size, progressid }) {
   // if size is small then set height
   let height = '10px'
   if (size === 'small') {
@@ -19,7 +20,7 @@ export default function ProgressBar({ progress, size }) {
 
   
   return (
-    <div className={`progress-bar${progress < 15 ? ' small' : ''}`} style={{ height: `${height}`}}>
+    <div id={progressid} className={`progress-bar${progress < 15 ? ' small' : ''}`} style={{ height: `${height}`}}>
       <Filler progress={progress} />
     </div>
   )

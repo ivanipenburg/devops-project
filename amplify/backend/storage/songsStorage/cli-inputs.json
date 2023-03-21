@@ -1,0 +1,10 @@
+{
+  "resourceName": "songsStorage",
+  "tableName": "songs",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

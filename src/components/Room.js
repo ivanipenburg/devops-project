@@ -18,6 +18,7 @@ export default function Room(props){
       <ul className='roomList'>
         {props.todoList.map((todo, index) => <Todo key={index} task={todo}></Todo>)}
       </ul>
+      <button className='newtodo'>+ Add task</button>
     </div>
   )
 }

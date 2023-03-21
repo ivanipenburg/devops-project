@@ -1,1 +1,12 @@
-{}
+{
+  "storage": {
+    "dynamoc5c06897": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "songsStorage": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
