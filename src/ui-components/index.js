@@ -4,6 +4,6 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-export { default as studioTheme } from './studioTheme';
-export { default as PrivateRoomCreateForm } from './PrivateRoomCreateForm';
-export { default as PrivateRoomUpdateForm } from './PrivateRoomUpdateForm';
+export { default as studioTheme } from './studioTheme'
+export { default as PrivateRoomCreateForm } from './PrivateRoomCreateForm'
+export { default as PrivateRoomUpdateForm } from './PrivateRoomUpdateForm'
