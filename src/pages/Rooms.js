@@ -1,7 +1,7 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
-import Room from '../components/Room'
+
 import '../components/Room.css'
 
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask } from '../graphql/mutations'
