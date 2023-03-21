@@ -1,0 +1,39 @@
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  border: solid rgba(141, 141, 141, 0.858);
+  border-radius: 10px;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background: #F8F8FC;
+}
+.image{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.roomList{
+  list-style-type: none;
+  padding-left: 10px;
+  width: 100%;
+}
+.rooms{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.newtodo{
+  border: solid #F8F8FC;
+  width: 100%;
+  background: #F8F8FC;
+  border-radius: 20px;
+  color: #CDCDCD;
+  text-align: left;
+  margin-left: 10px;
+}
+.newtodo:hover{
+  background: #66ebb66a;
+}
