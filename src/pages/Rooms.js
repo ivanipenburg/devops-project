@@ -1,7 +1,7 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
-
+import Room from '../components/Room'
 import '../components/Room.css'
 
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask } from '../graphql/mutations'
@@ -97,45 +97,36 @@ const Rooms = () => {
     }
   }
 
+  const filterTasks = (roomID) => {
+    return tasks.filter((task) => task.roomID === roomID)
+  }
+
   return (
     <div>
       <NavBar />
       <h1>Rooms</h1>
-      {/*
-      <div className='rooms'>
-        <Room name='Living room' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={54} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>
-        <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>   
-        <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>
-        <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>
-        <Room name='Kitchen' todoList={['Vaske', 'Rydde', 'Tørke støv']} progress={64} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg'/>  
-      </div>
-      */}
-      {rooms.map((room) => (
-        <div key={room.id}>
-          <h2>{room.name}</h2>
-          Map all tasks where RoomID matches room.id 
-          <ul>
-            {tasks
-              .filter((task) => task.roomID === room.id)
-              .map((task) => (
-                <div key={task.id}>
-                  <li>{task.title}</li>
-                  <Button onClick={() => deleteTask(task.id)}>Delete Task</Button>
-                </div>
-              ))}
-          </ul>
-          <View as="form" onSubmit={createTask}>
-            <TextField name="name" label="Task Name" />
-            <input type="hidden" name="roomid" value={room.id} />
-            <Button type="submit">Create Task</Button>
-          </View>
-          <Button onClick={() => deleteRoom(room.id)}>Delete Room</Button>
-        </div>
-      ))}
       <View as="form" onSubmit={createRoom}>
-        <TextField name="name" label="Room Name" />
-        <Button type="submit">Create Room</Button>
+        <TextField width='300px' name="name" marginBottom='1em' label='Create new room:' placeholder='Enter a room name...' outerEndComponent={<Button className='newroom' type='submit'>+</Button>} />
       </View>
+      <div className='rooms'>
+        {rooms.map((room) => (
+          <div key={room.id}>
+            <Room name={room.name} todoList={filterTasks(room.id)} roomID={room.id} addTask={createTask} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg' ></Room>
+            {/*Map all tasks where RoomID matches room.id */}
+            <ul>
+              {tasks
+                .filter((task) => task.roomID === room.id)
+                .map((task) => (
+                  <div key={task.id}>
+                    <li>{task.title}</li>
+                    <Button onClick={() => deleteTask(task.id)}>Delete Task</Button>
+                  </div>
+                ))}
+            </ul>
+            <Button onClick={() => deleteRoom(room.id)}>Delete Room</Button>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
