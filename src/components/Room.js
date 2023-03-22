@@ -20,8 +20,8 @@ export default function Room(props){
     <div className='card'>
       <img className='image' src={props.illustration}></img>
       <div className='roomcontent'>
-        {props.name}
-        <ProgressBar progress={props.tasks.filter(task => task.completed).length/props.tasks.length*100}/>
+        <h3>{props.name}</h3>
+        {props.tasks.length > 0 ? <ProgressBar progress={props.tasks.filter(task => task.completed).length/props.tasks.length*100}/> : <p className='noTasks'>You have no tasks for this space yet, create one!</p>}
         <ul className='roomList'>
           {props.tasks.map((task) =>
             <Task key={task.id} task={task} toggleTask={props.toggleTask} deleteTask={props.deleteTask} />

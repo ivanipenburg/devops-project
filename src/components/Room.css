@@ -74,3 +74,8 @@ the cards should be layed out in a grid of two columns with some space inbetween
 .roomcontent {
   margin: 10px;
 }
+
+.noTasks {
+  color: #CDCDCD;
+  margin-left: 10px;
+}
