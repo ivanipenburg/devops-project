@@ -1,13 +1,14 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
-import Room from '../components/Room'
+import RoomCollection from '../components/RoomCollection'
 import '../components/Room.css'
 
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask, updatePrivateTask } from '../graphql/mutations'
-import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
 
+import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
 import { Button, TextField, View } from '@aws-amplify/ui-react'
+
 const Rooms = () => {
   const [rooms, setRooms] = useState([])
   const [tasks, setTasks] = useState([])
@@ -127,6 +128,7 @@ const Rooms = () => {
           </div>
         ))}
       </div>
+      <RoomCollection rooms={rooms} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} tasks={tasks} />
     </div>
   )
 }
