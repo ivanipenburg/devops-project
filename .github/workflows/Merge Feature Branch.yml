@@ -32,3 +32,4 @@ jobs:
       - name: Run ci/cd
         run: |
           npm run lint
+          npm test
