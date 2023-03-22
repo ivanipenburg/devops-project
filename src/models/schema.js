@@ -24,21 +24,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "room": {
-                    "name": "room",
-                    "isArray": false,
-                    "type": {
-                        "model": "PrivateRoom"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "roomID"
-                        ]
-                    }
-                },
                 "roomID": {
                     "name": "roomID",
                     "isArray": false,
@@ -61,6 +46,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "privateRoomTasksId": {
+                    "name": "privateRoomTasksId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -69,6 +61,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "gsi-PrivateRoom.tasks",
+                        "fields": [
+                            "privateRoomTasksId"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -120,7 +121,7 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "room"
+                            "privateRoomTasksId"
                         ]
                     }
                 },
@@ -173,5 +174,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.6",
-    "version": "69c7c67f122ba32683c880120003f462"
+    "version": "ebb72d874a056c7d03cc1c922395ea2a"
 };
