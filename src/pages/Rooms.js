@@ -1,14 +1,13 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
-import RoomCollection from '../components/RoomCollection'
-import Room from '../components/Room'
 import '../components/Room.css'
+import RoomCollection from '../components/RoomCollection'
 
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask, updatePrivateTask } from '../graphql/mutations'
 
+import { Button, TextField, View, withAuthenticator } from '@aws-amplify/ui-react'
 import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
-import { Button, TextField, View } from '@aws-amplify/ui-react'
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([])
@@ -117,21 +116,16 @@ const Rooms = () => {
 
   return (
     <div>
-      <NavBar />
-      <View as="form" className='createroom' onSubmit={createRoom}>
-        <h1>Your spaces</h1>
-        <TextField width='300px' name="name" marginBottom='1em' label='Create new room:' placeholder='Enter a room name...' outerEndComponent={<Button className='newroom' type='submit'>+</Button>} />
-      </View>
-      <div className='rooms'>
-        {rooms.map((room) => (
-          <div key={room.id}>
-            <Room name={room.name} tasks={filterTasks(room.id)} roomID={room.id} addTask={createTask} deleteTask={deleteTask} toggleTask={toggleTask} deleteRoom={deleteRoom} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg' ></Room>
-          </div>
-        ))}
+      <div className='roomspage'>
+        <NavBar />
+        <View as="form" className='createroom' onSubmit={createRoom}>
+          <h1>Your spaces</h1>
+          <TextField width='300px' name="name" marginBottom='1em' label='Create new room:' placeholder='Enter a room name...' outerEndComponent={<Button className='newroom' type='submit'>+</Button>} />
+        </View>
+        <RoomCollection rooms={rooms} extraclass={'roomsrooms'} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} createRoom={createRoom} toggleTask={toggleTask} tasks={tasks} />
       </div>
-      <RoomCollection rooms={rooms} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} tasks={tasks} />
     </div>
   )
 }
 
-export default Rooms
+export default withAuthenticator(Rooms)

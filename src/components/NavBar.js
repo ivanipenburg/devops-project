@@ -17,9 +17,6 @@ const NavBar = () => {
             <Link to="/rooms">Rooms</Link>
           </li>
           <li>
-            <Link to="/household">Household</Link>
-          </li>
-          <li>
             <button onClick={() => Auth.signOut()}>Sign Out</button>
           </li>
         </ul>

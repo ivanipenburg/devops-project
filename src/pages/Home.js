@@ -1,18 +1,17 @@
 import { withAuthenticator } from '@aws-amplify/ui-react'
 import { API, graphqlOperation } from 'aws-amplify'
+import { useEffect, useState } from 'react'
 import '../components/Home.css'
 import Household from '../components/Household'
 import NavBar from '../components/NavBar'
 import Overview from '../components/Overview'
 import RoomCollection from '../components/RoomCollection'
-import { useEffect, useState } from 'react'
-import { createPrivateTask, deletePrivateRoom, deletePrivateTask } from '../graphql/mutations'
+import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask, updatePrivateTask } from '../graphql/mutations'
 import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
 
 const Home = () => {
   const [rooms, setRooms] = useState([])
   const [tasks, setTasks] = useState([])
-  const [completed, setCompleted] = useState(tasks.filter((task) => task.completed === true).length)
 
   useEffect(() => {
     fetchTasks()
@@ -40,13 +39,29 @@ const Home = () => {
       console.log('error on fetching rooms', error)
     }
   }
+
+  const createRoom = async (e) => {
+    e.preventDefault()
+    const form = new FormData(e.target)
+    const data = {
+      name: form.get('name'),
+    }
+
+    await API.graphql({
+      query: createPrivateRoom,
+      variables: { input: data },
+    })
+    fetchRooms()
+    e.target.reset()
+  }
+
   const createTask = async (e) => {
     e.preventDefault()
     const form = new FormData(e.target)
 
     const data = {
       title: form.get('name'),
-      roomID: form.get('roomid'),
+      privateRoomTasksId: form.get('roomid'),
       completed: false,
     }
     await API.graphql({
@@ -70,30 +85,42 @@ const Home = () => {
     }
   }
 
-  const deleteTask = async (id) => {
-    try {
-      await API.graphql({
-        query: deletePrivateTask,
-        variables: { input: { id } },
-      })
-      fetchRooms()
-      fetchTasks()
-    } catch (error) {
-      console.log('error on deleting task', error)
-    }
+  // toggleTask based on input value 
+  const toggleTask = async (e) => {
+    const id = e.target.value
+    const task = tasks.find((task) => task.id === id)
+    const newTask = { ...task, completed: !task.completed }
+    setTasks([...tasks.filter((task) => task.id !== id), newTask])
+    // Update private task expects id and completed
+    await API.graphql({
+      query: updatePrivateTask,
+      variables: { input: { id, completed: newTask.completed } },
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
+    })
   }
 
-  const filterTasks = (roomID, taskList) => {
-    return taskList.filter((task) => task.roomID === roomID)
+  const deleteTask = async (id) => {
+    const newTasks = tasks.filter((task) => task.id !== id)
+    setTasks(newTasks)
+    await API.graphql({
+      query: deletePrivateTask,
+      variables: { input: { id } },
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
+    })
+
+  }
+
+  const filterTasks = (roomID) => {
+    return tasks.filter((task) => task.privateRoomTasksId === roomID)
   }
 
   return (
     <div>
       <NavBar />
       <div className='homepage'>
-        <Overview totalprogress={completed/tasks.length*100} completed={completed} pending={tasks.length-completed} overdue={0}></Overview>
-        <Household setCompleted={setCompleted} completed={completed} householdTodos={tasks}></Household>
-        <RoomCollection rooms={rooms} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} tasks={tasks} />
+        <Overview totalprogress={(tasks.filter(task => task.completed).length / tasks.length) * 100} completed={tasks.filter(task => task.completed).length} pending={tasks.length - tasks.filter(task => task.completed).length} overdue={0}></Overview>
+        <Household tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask}></Household>
+        <RoomCollection rooms={rooms} extraclass={'overviewrooms'} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} createRoom={createRoom} toggleTask={toggleTask} tasks={tasks} />
       </div>
     </div>
   )

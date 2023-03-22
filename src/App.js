@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Admin from './pages/Admin'
+import './App.css'
 import Home from './pages/Home'
-import Household from './pages/Household'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Rooms from './pages/Rooms'
@@ -22,8 +21,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/rooms" element={<Rooms />} />
-          <Route path="/household" element={<Household />} />
-          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>
