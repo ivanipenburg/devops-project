@@ -2,22 +2,32 @@
   display: grid;
   grid-template-columns: repeat(3, 32%);
   gap: 20px;
-  margin: 10px;
+  /* margin: 10px; */
+  margin-left: 100px;
+  margin-right: 100px;
   align-content: space-evenly;
 }
 /* Styling for the Overview card*/
 .overview{
   grid-column: 1 / span 2;
   padding: 1em;
-
   display: grid;
-  grid-template-rows: 50px 15px 15px 50px;
+  /* grid-template-rows: 50px 15px 15px 50px; */
   grid-template-columns: 100%;
   border-radius: 10px;
   background: #F8F8FC;
-  border: solid rgba(141, 141, 141, 0.858);
+  /* border: solid rgba(141, 141, 141, 0.858); */
   align-items: center;
 }
+
+h3 {
+  margin: 5px;
+}
+
+h5 {
+  margin: 5px;
+}
+
 #overviewprogress{
   width: 100%;
   margin-left: 5px;
@@ -35,7 +45,7 @@
 .household{
   grid-column: 3;
   grid-row: 1/ span 2;
-  border: solid rgba(141, 141, 141, 0.858);
+  /* border: solid rgba(141, 141, 141, 0.858); */
   border-radius: 10px;
   background: #F8F8FC;
   padding: 1em;

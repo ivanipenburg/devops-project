@@ -10,7 +10,7 @@ ProgressBar.propTypes = {
 
 export default function ProgressBar({ progress, size, progressid }) {
   // if size is small then set height
-  let height = '10px'
+  let height = '20px'
   if (size === 'small') {
     height = '5px'
   }

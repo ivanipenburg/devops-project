@@ -8,6 +8,8 @@
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .filler {
@@ -26,7 +28,7 @@
   transform: translateY(-70%);
   text-align: right;
   padding-right: 10px;
-  font-size: 8px;
+  font-size: 10px;
   color: #fff;
   font-family: 'Roboto';
   transition: transform 2s;

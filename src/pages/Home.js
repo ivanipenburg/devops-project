@@ -1,10 +1,10 @@
-import {useState} from 'react'
 import { withAuthenticator } from '@aws-amplify/ui-react'
+import { useState } from 'react'
+import '../components/Home.css'
+import Household from '../components/Household'
 import NavBar from '../components/NavBar'
 import Overview from '../components/Overview'
 import Room from '../components/Room'
-import Household from '../components/Household'
-import '../components/Home.css'
 
 const Home = () => {
   const[completed, setCompleted] = useState(7)
@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <h1>Home</h1>
       <div className='homepage'>
         <Overview totalprogress={percentage} completed={completed} pending={totaltaskcount-completed} overdue={0}></Overview>
         <Household setCompleted={setCompleted} completed={completed} householdTodos={['Vaske', 'Rydde', 'Tørke støv']}></Household>
