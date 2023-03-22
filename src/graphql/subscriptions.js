@@ -10,26 +10,9 @@ export const onCreatePrivateTask = /* GraphQL */ `
       id
       title
       completed
-      room {
-        id
-        name
-        tasks {
-          nextToken
-          startedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      roomID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+      privateRoomTasksId
       owner
     }
   }
@@ -43,26 +26,9 @@ export const onUpdatePrivateTask = /* GraphQL */ `
       id
       title
       completed
-      room {
-        id
-        name
-        tasks {
-          nextToken
-          startedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      roomID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+      privateRoomTasksId
       owner
     }
   }
@@ -76,26 +42,9 @@ export const onDeletePrivateTask = /* GraphQL */ `
       id
       title
       completed
-      room {
-        id
-        name
-        tasks {
-          nextToken
-          startedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-      }
-      roomID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+      privateRoomTasksId
       owner
     }
   }
@@ -109,26 +58,10 @@ export const onCreatePrivateRoom = /* GraphQL */ `
       id
       name
       tasks {
-        items {
-          id
-          title
-          completed
-          roomID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
     }
   }
@@ -142,26 +75,10 @@ export const onUpdatePrivateRoom = /* GraphQL */ `
       id
       name
       tasks {
-        items {
-          id
-          title
-          completed
-          roomID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
     }
   }
@@ -175,26 +92,10 @@ export const onDeletePrivateRoom = /* GraphQL */ `
       id
       name
       tasks {
-        items {
-          id
-          title
-          completed
-          roomID
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-          owner
-        }
         nextToken
-        startedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
     }
   }

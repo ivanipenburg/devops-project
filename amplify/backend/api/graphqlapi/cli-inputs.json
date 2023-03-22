@@ -7,25 +7,7 @@
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authdevopsproject"
     },
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "AUTOMERGE"
-      },
-      "perModelResolutionStrategy": [
-        {
-          "resolutionStrategy": {
-            "type": "AUTOMERGE"
-          },
-          "entityName": "PrivateTask"
-        },
-        {
-          "resolutionStrategy": {
-            "type": "AUTOMERGE"
-          },
-          "entityName": "PrivateRoom"
-        }
-      ]
-    },
+    "conflictResolution": {},
     "additionalAuthTypes": [
       {
         "mode": "API_KEY",

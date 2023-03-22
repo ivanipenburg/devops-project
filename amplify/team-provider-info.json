@@ -17,18 +17,7 @@
         "devopsproject6f6a34e7": {},
         "devopsproject": {}
       },
-      "function": {
-        "devopsprojectda02968a": {
-          "deploymentBucketName": "amplify-livingspace-dev-163927-deployment",
-          "s3Key": "amplify-builds/devopsprojectda02968a-6b356c4245596a707165-build.zip"
-        },
-        "devopsproject76cd4aa2": {
-          "deploymentBucketName": "amplify-livingspace-dev-163927-deployment",
-          "s3Key": "amplify-builds/devopsproject76cd4aa2-6659416737774a445a4e-build.zip"
-        }
-      },
       "api": {
-        "livingSpaceApi": {},
         "graphqlapi": {}
       },
       "storage": {

@@ -6,12 +6,10 @@ type PrivateTask @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   title: String!
   completed: Boolean!
-  room: PrivateRoom @belongsTo(fields: ["roomID"])
-  roomID: ID
 }
 
 type PrivateRoom @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
-  tasks: [PrivateTask] @hasMany(fields: ["id"])
+  tasks: [PrivateTask] @hasMany
 }

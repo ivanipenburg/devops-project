@@ -1,6 +1,6 @@
 import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
 // @ts-ignore
-import { LazyLoading, LazyLoadingDisabled, AsyncItem, AsyncCollection } from "@aws-amplify/datastore";
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection } from "@aws-amplify/datastore";
 
 
 
@@ -14,10 +14,10 @@ type EagerPrivateTask = {
   readonly id: string;
   readonly title: string;
   readonly completed: boolean;
-  readonly room?: PrivateRoom | null;
   readonly roomID?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly privateRoomTasksId?: string | null;
 }
 
 type LazyPrivateTask = {
@@ -28,10 +28,10 @@ type LazyPrivateTask = {
   readonly id: string;
   readonly title: string;
   readonly completed: boolean;
-  readonly room: AsyncItem<PrivateRoom | undefined>;
   readonly roomID?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly privateRoomTasksId?: string | null;
 }
 
 export declare type PrivateTask = LazyLoading extends LazyLoadingDisabled ? EagerPrivateTask : LazyPrivateTask
