@@ -6,7 +6,7 @@ import RoomCollection from '../components/RoomCollection'
 
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask, updatePrivateTask } from '../graphql/mutations'
 
-import { Button, TextField, View } from '@aws-amplify/ui-react'
+import { Button, TextField, View, withAuthenticator } from '@aws-amplify/ui-react'
 import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
 
 const Rooms = () => {
