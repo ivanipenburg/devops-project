@@ -1,13 +1,12 @@
 import { API, graphqlOperation } from 'aws-amplify'
 import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
-import Room from '../components/Room'
+import RoomCollection from '../components/RoomCollection'
 import '../components/Room.css'
-
 import { createPrivateRoom, createPrivateTask, deletePrivateRoom, deletePrivateTask } from '../graphql/mutations'
 import { listPrivateRooms, listPrivateTasks } from '../graphql/queries'
-
 import { Button, TextField, View } from '@aws-amplify/ui-react'
+
 const Rooms = () => {
   const [rooms, setRooms] = useState([])
   const [tasks, setTasks] = useState([])
@@ -97,8 +96,8 @@ const Rooms = () => {
     }
   }
 
-  const filterTasks = (roomID) => {
-    return tasks.filter((task) => task.roomID === roomID)
+  const filterTasks = (roomID, taskList) => {
+    return taskList.filter((task) => task.roomID === roomID)
   }
 
   return (
@@ -108,25 +107,7 @@ const Rooms = () => {
       <View as="form" onSubmit={createRoom}>
         <TextField width='300px' name="name" marginBottom='1em' label='Create new room:' placeholder='Enter a room name...' outerEndComponent={<Button className='newroom' type='submit'>+</Button>} />
       </View>
-      <div className='rooms'>
-        {rooms.map((room) => (
-          <div key={room.id}>
-            <Room name={room.name} todoList={filterTasks(room.id)} roomID={room.id} addTask={createTask} illustration='https://img.freepik.com/free-vector/home-interior-background-concept_52683-44165.jpg?size=626&ext=jpg' ></Room>
-            {/*Map all tasks where RoomID matches room.id */}
-            <ul>
-              {tasks
-                .filter((task) => task.roomID === room.id)
-                .map((task) => (
-                  <div key={task.id}>
-                    <li>{task.title}</li>
-                    <Button onClick={() => deleteTask(task.id)}>Delete Task</Button>
-                  </div>
-                ))}
-            </ul>
-            <Button onClick={() => deleteRoom(room.id)}>Delete Room</Button>
-          </div>
-        ))}
-      </div>
+      <RoomCollection rooms={rooms} filterTasks={filterTasks} createTask={createTask} deleteRoom={deleteRoom} deleteTask={deleteTask} tasks={tasks} />
     </div>
   )
 }

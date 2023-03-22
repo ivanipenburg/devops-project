@@ -27,7 +27,6 @@ h3 {
 h5 {
   margin: 5px;
 }
-
 #overviewprogress{
   width: 100%;
   margin-left: 5px;
@@ -54,4 +53,8 @@ h5 {
   list-style-type: none;
   padding-left: 10px;
   width: 100%;
+}
+/* Styling for roms*/
+.rooms{
+  grid-column: 1/ span 2;
 }

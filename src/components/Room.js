@@ -7,7 +7,7 @@ Room.propTypes = {
   name: String,
   illustration: String,
   progress: Number,
-  todoList: String,
+  todoList: Array,
   roomID: String,
   addTask: Function
 }
@@ -39,7 +39,7 @@ export default function Room(props){
           </li>)}
       </ul>
       <View as='form' onSubmit={props.addTask}>
-        <TextField label='Create new task:' size='small' className='taskinput' name='name' placeholder='Write task here...' isRequired={true} margin={10} outerEndComponent={<Button className='newtodo' size='small' type='submit'>+</Button>}/>
+        <TextField label='Create new task:' size='small' className='taskinput' name='name' placeholder='Write task here...' isRequired={true} margin={10} outerEndComponent={<Button size='small' type='submit'>+</Button>}/>
         <input type='hidden' name='roomid' value={props.roomID} />
       </View>
     </div>
