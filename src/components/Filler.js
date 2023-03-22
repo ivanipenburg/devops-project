@@ -8,7 +8,7 @@ Filler.propTypes = {
 export default function Filler({ progress }) {
   return (
     <div className={`filler-green filler${progress < 15 ? ' filler-black' : ''}`} style={{ width: `${progress}%` }}>
-      <p className="filler-text">{progress}%</p>
+      <p className="filler-text">{progress.toFixed(0)}%</p>
     </div>
   )
 }
