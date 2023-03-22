@@ -128,4 +128,4 @@ const Rooms = () => {
   )
 }
 
-export default Rooms
+export default withAuthenticator(Rooms)
