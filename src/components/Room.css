@@ -37,3 +37,25 @@
 .newtodo:hover{
   background: #66ebb66a;
 }
+
+.createroom {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.deletetask {
+  color: red;
+  border: none;
+  background: none;
+  font-weight: bold;
+  /* On hover have grab hand */
+  cursor: pointer;
+}
+
+.deleteroom {
+  color: #CDCDCD;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
