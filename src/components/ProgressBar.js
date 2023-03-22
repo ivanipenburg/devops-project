@@ -1,12 +1,13 @@
 import React from 'react'
 import ConfettiExplosion from 'react-confetti-explosion'
 import Filler from './Filler'
+import PropTypes from 'prop-types'
 import './ProgressBar.css'
 
 ProgressBar.propTypes = {
   progress: Number,
-  size: String,
-  progressid: String
+  size: PropTypes.string,
+  progressid: PropTypes.objectOf(PropTypes.any)
 }
 
 export default function ProgressBar({ progress, size, progressid }) {
@@ -22,7 +23,7 @@ export default function ProgressBar({ progress, size, progressid }) {
   }
   
   return (
-    <div id={progressid} className={`progress-bar${progress < 15 ? ' small' : ''}`} style={{ height: `${height}` }}>
+    <div data-testid="progressbar" id={progressid} className={`progress-bar${progress < 15 ? ' small' : ''}`} style={{ height: `${height}`}}>
       {progress === 100 && <ConfettiExplosion />}
       <Filler progress={progress} />
     </div>

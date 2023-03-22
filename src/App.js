@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Rooms from './pages/Rooms'
+import './App.css'
 
 import '@aws-amplify/ui-react/styles.css'
 
