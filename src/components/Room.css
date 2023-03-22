@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 300px;
-  border: solid rgba(141, 141, 141, 0.858);
+  /* border: solid rgba(141, 141, 141, 0.858); */
   border-radius: 10px;
   justify-content: space-between;
   padding-bottom: 10px;
