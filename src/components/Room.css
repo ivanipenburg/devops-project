@@ -1,0 +1,81 @@
+/* We have class rooms which contains rooms and class card which contains all info on one card
+the cards should be layed out in a grid of two columns with some space inbetween*/
+
+.overviewrooms {
+  display: grid;
+  grid-template-columns: 100% 100%;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.roomsrooms {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.card {
+  background: #F8F8FC;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.roomspage {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.image{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.roomList{
+  list-style-type: none;
+  padding-left: 10px;
+  width: 100%;
+}
+.newtodo{
+  border: solid #F8F8FC;
+  width: 100%;
+  background: #F8F8FC;
+  border-radius: 20px;
+  color: #CDCDCD;
+  text-align: left;
+  margin-left: 10px;
+}
+.newtodo:hover{
+  background: #66ebb66a;
+}
+
+/* .createroom {
+  margin-left: 100px;
+  margin-right: 100px;
+} */
+
+.deletetask {
+  color: lightcoral;
+  border: none;
+  background: none;
+  font-weight: bold;
+  /* On hover have grab hand */
+  cursor: pointer;
+}
+
+.deleteroom {
+  color: #CDCDCD;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.roomcontent {
+  margin: 10px;
+}
+
+.noTasks {
+  color: #CDCDCD;
+  margin-left: 10px;
+}

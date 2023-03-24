@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+.progress-bar {
+  /* center div */
+  width: 100%;
+  height: 20px;
+  border: 2px solid #CDCDCD;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.filler {
+  width: 0%;
+  height: 100%;
+  /* background-image: linear-gradient(to right, #1C85E8, #79B6EE); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.7s;
+  line-height: 100%;
+}
+
+.filler-text {
+  /* position: relative; */
+  transform: translateY(-70%);
+  text-align: right;
+  padding-right: 10px;
+  font-size: 10px;
+  color: #fff;
+  font-family: 'Roboto';
+  transition: transform 2s;
+}
+
+.filler-blue {
+  background-image: linear-gradient(to right, #1C85E8, #79B6EE);
+}
+
+.filler-green {
+  background-image: linear-gradient(to right, #00B16A, #6BBF9C);
+}
+
+.progress-bar.small .filler-text {
+  /* top: 50%; */
+  transform: translateY(-70%);
+  text-align: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 10px;
+  color: #000;
+  font-family: 'Roboto';
+}
+
+.filler-black .filler-text {
+  text-align: left;
+}

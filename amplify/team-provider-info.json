@@ -1,0 +1,28 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-livingspace-dev-163927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::985833969172:role/amplify-livingspace-dev-163927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::985833969172:role/amplify-livingspace-dev-163927-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-livingspace-dev-163927-deployment",
+      "UnauthRoleName": "amplify-livingspace-dev-163927-unauthRole",
+      "StackName": "amplify-livingspace-dev-163927",
+      "StackId": "arn:aws:cloudformation:us-east-1:985833969172:stack/amplify-livingspace-dev-163927/92f83db0-c347-11ed-962e-12cbdb7f7967",
+      "AmplifyAppId": "d2ropbvb1nq79i",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-livingspace-dev-163927-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "devopsproject6f6a34e7": {},
+        "devopsproject": {}
+      },
+      "api": {
+        "graphqlapi": {}
+      },
+      "storage": {
+        "livingSpaceStorage": {}
+      }
+    }
+  }
+}
